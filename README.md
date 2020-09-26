@@ -4,7 +4,7 @@ To create a shorter url and present that to the user instead of a very large url
 # Statement
 You have given a (typically) long URL, how would you design service that would generate a shorter and unique alias for it?
 
-# Infomation Cases
+# Infomation
 - The application will run on local machine and will connect to the H2 database so that the data is saved in that itself.
 - The test cases are written in the code for each part which can be used to check the working of the code.
   ## Steps to run the test
@@ -17,4 +17,5 @@ You have given a (typically) long URL, how would you design service that would g
 
 # Future 
 - The performance can futhur be improved by adding clusters with load balancers such that there are more instances such that the uniqueness can be maintained and also for handling huge amount of traffic.
-- Also something like a validity can be added to the code so that the data (shorten url) is not always valid and the space in the DB is optimally used.
+- Something like a validity can be added to the code so that the data (shorten url) is not always valid and the space in the DB is optimally used.
+- Caching too can be introduced for fast data access according to the frecuency in which the data is accessed.
