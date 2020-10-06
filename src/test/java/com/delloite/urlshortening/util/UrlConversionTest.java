@@ -17,7 +17,7 @@ public class UrlConversionTest {
 	
 	@Test
 	public void testGenerateUrlFromIdLessthan62() {
-		assertEquals("8",mockUrlConversion.generateUrlFromId(61));
+		assertEquals("8",mockUrlConversion.generateUrlFromId(60));
 	}
 	
 	@Test

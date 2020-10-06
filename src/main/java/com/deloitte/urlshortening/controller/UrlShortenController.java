@@ -27,6 +27,12 @@ public class UrlShortenController {
 	@Autowired
 	UrlShortenService urlShortenService;
 	
+	/**
+	 * Post request
+	 * Shorten the long Url 
+	 * @param	url the long url
+	 * @return	the shortenedurl
+	 * */
 	@ApiOperation(value = "Shorten url")
 	@PostMapping("/shorten-url")
 	public ResponseEntity<UrlResponse> createShortUrl(@RequestBody UrlRequest url){
@@ -40,9 +46,17 @@ public class UrlShortenController {
 		return new ResponseEntity<>(response,HttpStatus.BAD_REQUEST);
 	}
 	
+	
+	/**
+	 * Get request
+	 * Retrieve the long Url from the shortened one
+	 * @param	url the shortUrl
+	 * @return	the redirection for the original url 
+	 * 
+	 * */
 	@ApiOperation(value="Open the original Url")
 	@GetMapping("{url}")
-	public ResponseEntity<?> getUrlAndRedirect(@PathVariable String url){
+	public ResponseEntity<String> getUrlAndRedirect(@PathVariable String url){
 		String value=null;
 		try {
 		 value = urlShortenService.getOriginalUrl(url);

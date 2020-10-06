@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 /**
- * Hello world!
+ * Root of the application!
  *
  */
 @SpringBootApplication

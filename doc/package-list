@@ -1,0 +1,8 @@
+com.deloitte.urlshortening
+com.deloitte.urlshortening.config
+com.deloitte.urlshortening.controller
+com.deloitte.urlshortening.dto
+com.deloitte.urlshortening.model
+com.deloitte.urlshortening.repository
+com.deloitte.urlshortening.service
+com.deloitte.urlshortening.util

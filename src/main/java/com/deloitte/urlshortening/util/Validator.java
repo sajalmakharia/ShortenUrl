@@ -9,7 +9,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class Validator {
 	
-	
+	/**
+	 * Validate is the given long url is valid or not
+	 * @param url the original url
+	 * @return boolean true or false
+	 */
 	public boolean validateUrl(String url) {
 		try {
 			new URL(url).toURI();

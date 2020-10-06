@@ -28,6 +28,9 @@ public class UrlShorteningControllerTest {
 	@InjectMocks
 	UrlShortenController mockUrlShortenController;
 	
+	/**
+	 * Positive test for create url Api
+	 */
 	@Test
 	public void testCreateShortUrlSuccess() {
 		UrlRequest url = new UrlRequest();
@@ -37,6 +40,9 @@ public class UrlShorteningControllerTest {
 		assertEquals(HttpStatus.CREATED, mockUrlShortenController.createShortUrl(url).getStatusCode());
 	}
 	
+	/**
+	 * Negative test for create url Api
+	 */
 	@Test
 	public void testCreateShortUrlFailure() {
 		UrlRequest url = new UrlRequest();
@@ -46,6 +52,10 @@ public class UrlShorteningControllerTest {
 		assertEquals(HttpStatus.BAD_REQUEST, mockUrlShortenController.createShortUrl(url).getStatusCode());
 	}
 	
+	/**
+	 * Positive test for get original url
+	 * from shortened url Api
+	 */
 	@Test
 	public void testGetUrlAndRedirectSuccess() {
 		String resultUrl = "test";
@@ -53,6 +63,10 @@ public class UrlShorteningControllerTest {
 		assertEquals(HttpStatus.FOUND,mockUrlShortenController.getUrlAndRedirect(resultUrl).getStatusCode());
 	}
 	
+	/**
+	 * Negative test for get original url
+	 * from shortened url Api
+	 */
 	@Test
 	public void testGetUrlAndRedirectFailure() {
 		when(mockUrlShortenService.getOriginalUrl(any())).thenThrow(new EntityNotFoundException());

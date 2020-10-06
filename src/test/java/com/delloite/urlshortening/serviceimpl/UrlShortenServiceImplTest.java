@@ -67,6 +67,13 @@ public class UrlShortenServiceImplTest {
 	
 	@Test(expected=EntityNotFoundException.class)
 	public void testGetOriginalUrlException() {
+		when(mockUrlConversion.getIdFromShortUrl("a")).thenReturn(0L);
+		String longUrl="http://www.google.com";
+		Url url = new Url();
+		url.setLongUrl(longUrl);
+		url.setKey(0);
+		when(mockUrlRepository.findById(0L)).thenThrow(EntityNotFoundException.class);
+		mockUrlShortenServiceImpl.getOriginalUrl("a");
 		
 	}
 
